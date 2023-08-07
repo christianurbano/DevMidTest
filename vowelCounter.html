@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vowel Counter</title>
+  </head>
+  <body>
+    <text>Vowel Counter</text>
+      <form>
+        sentence: <input type="text"  id="word" name ="word" /><br />
+        <p>sentence :</p>
+        <button type="button" onclick="vowelCount()"">verif</button>
+      </form>
+      <p>Result: <span id="Result"></span></p>
+
+    <script>
+      function vowelCount(){
+        var word = document.getElementById("word").value.toLowerCase();
+        var vowel= ['a','e','i','o','u']
+        let count = 0
+        
+        for(let i=0;i<word.length; i++){
+          if(vowel.includes(word[i])){
+            count++
+          }
+        }
+        const result = document.getElementById("Result")
+        result.textContent= count
+      }
+    </script>
+
+  </body>
+</html>
+

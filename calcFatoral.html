@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Factorial</title>
+  </head>
+  <body>
+    <text>Factorial</text>
+      <form>
+        number: <input type="number"  id="number" name ="number" /><br />      
+        <button type="button" onclick="result()"">calc</button>
+      </form>
+      <p>Result: <span id="Result"></span></p>
+
+    <script>
+        function factorial(numb) {
+          if (numb === 0 || numb === 1)
+            return 1;
+          for (var i = numb - 1; i >= 1; i--) {
+            numb *= i;
+          }
+          return numb;
+        }
+
+        function result(){
+          number = parseFloat(document.getElementById("number").value)
+          const result = factorial(number)          
+          document.getElementById("Result").textContent = result;
+        }
+    </script>
+
+  </body>
+</html>
+

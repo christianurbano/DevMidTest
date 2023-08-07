@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Table</title>
+  </head>
+  <body>
+    <text>Table</text>
+      <form>
+        number: <input type="number"  id="number" name ="number" /><br />      
+        <button type="button" onclick="result()"">Display </button>
+      </form>
+      <div id="Result"><br/></div>
+
+    <script>
+      function result(){  
+        var number = parseInt(document.getElementById("number").value)
+        var result = document.getElementById("Result")
+        var table = ''
+        for (var i= 1; i <=10; i++)
+          table += number+"X"+i+"="+number*i+"<br/>"  
+        result.innerHTML = table
+      }
+    </script>
+
+  </body>
+</html>
+

@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Grade Average</title>
+  </head>
+  <body>
+    <text>Grade Average</text>
+      <form>
+        grade 1: <input type="number"  id="grade1"  /><br />
+        grade 2: <input type="number"  id="grade2"  /><br />
+        grade 3: <input type="number"  id="grade3"  /><br />
+        <button type="button" onclick="calcAverage()"">Calc</button>
+      </form>
+      <p>average of the grades: <span id="Result"></span></p>
+
+    <script>
+      function calcAverage(){
+        var grade1 = parseInt(document.getElementById("grade1").value)
+        var grade2 = parseInt(document.getElementById("grade2").value)
+        var grade3 = parseInt(document.getElementById("grade3").value)
+
+        function average(){
+          var average = (grade1+grade2+grade3)/3
+          return average          
+        }
+        const calc = average()
+        document.getElementById("Result").textContent = calc
+      }
+    </script>
+
+  </body>
+</html>
+

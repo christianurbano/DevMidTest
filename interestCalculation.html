@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Interest Calculation</title>
+  </head>
+  <body>
+    <text>Interest Calculation</text>
+      <form>
+        initial capital,: <input type="number"  id="capital"  /><br />
+        interest rate,: <input type="number"  id="rate"  /><br />
+        investment time (in months): <input type="number"  id="investmentTime"  /><br />
+        <button type="button" onclick="calcValue()"">Calc</button>
+      </form>
+      <p>final value: <span id="Result"></span></p>
+
+    <script>
+      function calcValue(){
+        var capital = parseFloat(document.getElementById("capital").value)
+        var rate = parseFloat(document.getElementById("rate").value)
+        var investmentTime = parseInt(document.getElementById("investmentTime").value)
+        
+        function finalValue (){
+          const rateDecimal = rate/100
+          const finalValue  = capital * (Math.pow((1+rateDecimal),investmentTime))
+          return finalValue          
+        }
+        const calc = finalValue()
+        document.getElementById("Result").textContent = calc.toFixed(2)
+      }
+    </script>
+
+  </body>
+</html>
+

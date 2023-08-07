@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Palindrome</title>
+  </head>
+  <body>
+    <text>Palindrome</text>
+      <form>
+        word: <input type="text"  id="word" name ="word" /><br />      
+        <button type="button" onclick="verificPalindrome()"">verif</button>
+      </form>
+      <p>Result: <span id="Result"></span></p>
+
+    <script>
+        function palindrome(word) {          
+          word = word.toLowerCase().replace('');
+          var len = word.length;
+          for (var i = 0; i < len/2; i++) {
+            if (word[i] !== word[len - 1 - i]) {
+                return false;
+            }
+          }
+          return true;
+        }
+
+        function verificPalindrome(){
+           word = document.getElementById("word").value
+          const result = palindrome(word)          
+          document.getElementById("Result").textContent = result;
+        }
+    </script>
+
+  </body>
+</html>
+
